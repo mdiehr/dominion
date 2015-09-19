@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "quotes": [1, "single"],
+    "no-multi-spaces": 0,
+    "no-loop-func": 0,
+    "key-spacing": 0,
+    "no-constant-condition": 0,
+    "react/display-name": 0,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2
+  }
+}
