@@ -1,7 +1,19 @@
 # Dominion
 Code for the dominion.diehrstraits.com website
 
-# Development Setup
+# Initial setup
+
+1. Install node.js from https://nodejs.org/ (Choose the LTS version)
+2. Open a shell in the directory this README is located in
+3. Type 'npm install' to install all of the dependencies
+
+# Running
+
+On windows, type 'npm run startw'.
+
+On 'nix systems, type 'npm run start'.
+
+# Development Tools Setup
 
 https://medium.com/@dan_abramov/lint-like-it-s-2015-6987d44c5b48
 
