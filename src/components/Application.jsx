@@ -1,16 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import Header from '../components/Header.jsx';
+import Header from '../components/parts/Header.jsx';
 
 export default class Application extends Component {
     static propTypes = {
         children: PropTypes.any
     }
 
-    render () {
+    render() {
         return (
             <div id="layout">
                 <Header />
-                <div id="main">
+                <div id="main" className="container-fluid" role="main">
                     {/* this will render the child routes */}
                     {this.props.children}
                 </div>

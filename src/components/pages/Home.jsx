@@ -1,48 +1,34 @@
-// This component renders the body of our app
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 
-// import * as VenueActions from '../../actions/VenueActions';
 import Col from 'react-bootstrap/lib/Col';
 
-// Connect to all of the stores that the app cares about
-@connect(state => ({
-    FormStore: state.FormStore,
-    SetStore: state.SetStore,
-    CardStore: state.CardStore
-}))
-export default class Home extends Component {
-    static propTypes = {
-        FormStore: PropTypes.object.isRequired,
-        SetStore: PropTypes.array.isRequired,
-        CardStore: PropTypes.array.isRequired
-    };
+import SetList from '../parts/SetList.jsx';
 
-    static contextTypes = {
-        router: React.PropTypes.object.isRequired
+// Connect to all of the stores that the app cares about
+var select = (state) => ({
+    SetStore: state.SetStore
+});
+
+class Home extends Component {
+    static propTypes = {
+        SetStore: PropTypes.array.isRequired
     };
 
     render() {
-        const { CardStore, SetStore } = this.props;
-        // this.context.router
+        const { SetStore } = this.props;
+
         return (
-            <div className="container-fluid" role="main">
-                <Col lg={4} md={4} sm={4} xs={12}>
-                    <ul>
-                        {SetStore.map( (set) => (
-                            <li key={set}>
-                                <Link to={`/set/${set}`}>{set}</Link>
-                            </li>
-                        ))}
-                    </ul>
+            <div>
+                <Col sm={4}>
+                    <SetList sets={SetStore} />
                 </Col>
-                <Col lg={8} md={8} sm={8} xs={12}>
-                    {CardStore.map(card => {
-                        return <div key={card}>{card}</div>;
-                    })}
+                <Col sm={8}>
+                    Click on a set to view its cards.
                 </Col>
             </div>
         );
     }
 }
+
+export default connect(select)(Home);

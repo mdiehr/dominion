@@ -1,8 +1,10 @@
 import '../assets/stylesheets/index.css';
 import React from 'react';
-import HashHistory from 'react-router/lib/HashHistory';
+import ReactDOM from 'react-dom';
+import history from './services/History.js';
 import Root from './Root';
 
-const history = new HashHistory();
+var container = document.createElement('div');
+document.body.appendChild(container);
 
-React.render(<Root history={history} />, document.body);
+ReactDOM.render(<Root history={history} />, container);

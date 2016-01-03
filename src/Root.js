@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { Redirect, Router, Route } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
 import Application from './components/Application.jsx';
 import Home from './components/pages/Home.jsx';
+import Set from './components/pages/Set.jsx';
+import Card from './components/pages/Card.jsx';
 import NotFound from './components/pages/NotFound.jsx';
 
 import * as reducers from './stores';
@@ -25,20 +27,15 @@ export default class App extends Component {
         const { history } = this.props;
         return (
             <Provider store={store}>
-                {this.renderRoutes.bind(this, history)}
+                <Router history={history}>
+                    <Route path="/" component={Application}>
+                        <IndexRoute component={Home} />
+                        <Route path="set/:setName" component={Set} />
+                        <Route path="card/:cardName" component={Card} />
+                        <Route path='/*' component={NotFound} />
+                    </Route>
+                </Router>
             </Provider>
-        );
-    }
-
-    renderRoutes(history) {
-        return (
-            <Router history={history}>
-                <Route component={Application}>
-                    <Redirect from="/" to="home" />
-                    <Route path="home" name="home" component={Home} />
-                    <Route path='/*' component={NotFound} />
-                </Route>
-            </Router>
         );
     }
 }

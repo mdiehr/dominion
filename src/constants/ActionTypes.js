@@ -1,8 +1,6 @@
 // This file provides a list of constant values for dispatching actions
-import keyMirror from 'react/lib/keyMirror';
-
-export default keyMirror({
+export default {
     // Form controls
-    FORM_UPDATE_VALUE: null,
-    FORM_CLEAR: null
-});
+    FORM_UPDATE_VALUE: 'FORM_UPDATE_VALUE',
+    FORM_CLEAR: 'FORM_CLEAR'
+};

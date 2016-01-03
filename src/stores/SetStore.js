@@ -2,7 +2,7 @@
 // import ActionTypes from '../constants/ActionTypes';
 
 function getDefaultState() {
-    return ['Base', 'Intrigue', 'Prosperity', 'Promo'];
+    return ['Common', 'Base', 'Intrigue', 'Prosperity', 'Promo'];
 }
 
 export default function FormStore(state = getDefaultState(), action) {
