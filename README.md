@@ -9,9 +9,9 @@ Code for the dominion.diehrstraits.com website
 
 # Running
 
-On windows, type 'npm run startw'.
+On windows, type 'npm start'.
 
-On 'nix systems, type 'npm run start'.
+On linux/unix systems, type 'npm run startl'.
 
 # Development Tools Setup
 
