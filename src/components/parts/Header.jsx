@@ -26,7 +26,7 @@ export default class Header extends Component {
                 <Nav>
                     <div className='navbar-header'><span className='navbar-brand'>{siteName}</span></div>
                     { SetStore.length > 0 ? (
-                        <DropdownButton id="set-dropdown" eventKey={1} title='Set'>
+                        <DropdownButton id="set-dropdown" eventKey={1} title='Choose Expansion'>
                             {SetStore.map((set) => (
                                 <li id={set} key={set}>
                                     <Link to={`/set/${set}`}>{set}</Link>
